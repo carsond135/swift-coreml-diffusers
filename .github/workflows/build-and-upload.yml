@@ -1,0 +1,28 @@
+name: "Build and Upload IPA"
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ./.github/actions/ios-build-action
+      with:
+        project-path: "Diffusion.xcodeproj"
+        p12-base64: ${{ secrets.CERTIFICATES_FILE_BASE64 }}
+        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+        code-signing-identity: "iOS Distribution"
+        team-id: "4AVLVM82HR"
+        certificate-password: ${{ secrets.CERTIFICATES_PASSWORD }}
+        export-method: "app-store"
+        configuration: "Release"
+        scheme: "Diffusion"
+        update-targets: "Diffusion"
+        build-sdk: "iphoneos"
+        entitlements-file-path: "Diffusion/Diffusion.entitlements"
+        increment-build-number: "true"
+        bundle-identifier: "com.carsonbdunlap.Diffusers"
+        app-store-connect-api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+        app-store-connect-api-key-issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+        app-store-connect-api-key-base64: ${{ secrets.APPSTORE_PRIVATE_KEY }}

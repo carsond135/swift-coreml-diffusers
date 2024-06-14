@@ -1,0 +1,123 @@
+name: "iOS Build Action"
+description: "Build iOS project (.xcodeproj, .xcworkspace), and export ipa with custom entitlements"
+inputs:
+  p12-key-base64:
+    description: "Base64 encoded p12 key"
+    required: false
+  p12-cer-base64:
+    description: "Base64 encoded certificate for the p12 key"
+    required: false
+  p12-base64:
+    description: "Base64 encoded p12 file (key + cert)"
+    required: false
+  mobileprovision-base64:
+    description: "Base64 encoded mobileprovision file"
+    required: false
+  p12-key-path:
+    description: "p12 key path"
+    required: false
+  p12-cer-path:
+    description: "Certificate path for the p12 key"
+    required: false
+  p12-path:
+    description: "p12 path (key + cert)"
+    required: false
+  mobileprovision-path:
+    description: "mobileprovision path"
+    required: false
+  project-path:
+    description: "Project path"
+    required: true
+  code-signing-identity:
+    description: "For example, iOS Distribution"
+    required: true
+  team-id:
+    description: "Team id"
+    required: true
+  workspace-path:
+    description: "Workspace path"
+    required: false
+    default: ""
+  export-method:
+    description: "Choose app-store, ad-hoc, package, enterprise, development, or developer-id"
+    required: false
+    default: "app-store"
+  configuration:
+    description: "For example, Debug, Release"
+    required: false
+    default: "Release"
+  certificate-password:
+    description: "Certificate password"
+    required: false
+    default: ""
+  output-path:
+    description: "Output path of ipa"
+    required: false
+    default: "output.ipa"
+  scheme:
+    description: "Scheme"
+    required: false
+    default: ""
+  update-targets:
+    description: "Targets to be updated with mobileprovision, code signing identity, etc"
+    required: false
+    default: ""
+  disable-targets:
+    description: "Deprecated, use update-targets instead"
+    required: false
+    default: ""
+  export-options:
+    description: "Path to an export options plist"
+    required: false
+    default: ""
+  build-sdk:
+    description: "The SDK that should be used for building the application"
+    required: false
+    default: ""
+  build-destination:
+    description: "Use a custom destination for building the app"
+    required: false
+    default: ""
+  cloned-source-packages-path:
+    description: "Path for Swift Package Manager dependencies"
+    required: false
+    default: ""
+  entitlements-file-path:
+    description: "Path to your entitlements file"
+    required: false
+    default: ""
+  increment-build-number: 
+    description: "Increment the build number before building the application"
+    required: false
+    default: ""
+  increment-version-number:
+    description: 'Increment the version number of your project. Supports patch, minor, major or a specific version number.'
+    required: false
+    default: ""
+  bundle-identifier:
+    description: 'Bundle identifier of the application.'
+    required: false
+    default: ""
+  app-store-connect-api-key-id:
+    description: 'App Store Connect API Key ID'
+    required: false
+    default: ""
+  app-store-connect-api-key-issuer-id:
+    description: 'App Store Connect API Key Issuer ID'
+    required: false
+    default: ""
+  app-store-connect-api-key-base64:
+    description: 'Base64 encoded App Store Connect API Key'
+    required: false
+    default: ""
+  build-path:
+    description: 'Build path'
+    required: false
+    default: ""
+  custom-keychain-name:
+    description: 'Custom Keychain Name'
+    required: false
+    default: "ios-build.keychain"
+runs:
+  using: "node16"
+  main: "dist/index.js"
