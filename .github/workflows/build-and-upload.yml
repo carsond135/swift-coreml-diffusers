@@ -21,7 +21,7 @@ jobs:
         update-targets: "Diffusion"
         build-sdk: "iphoneos"
         entitlements-file-path: "Diffusion/Diffusion.entitlements"
-        increment-build-number: "true"
+        increment-build-number: "testflight"
         bundle-identifier: "com.carsonbdunlap.Diffusers"
         app-store-connect-api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
         app-store-connect-api-key-issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
