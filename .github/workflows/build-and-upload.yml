@@ -12,7 +12,7 @@ jobs:
         project-path: "Diffusion.xcodeproj"
         p12-base64: ${{ secrets.CERTIFICATES_FILE_BASE64 }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
-        code-signing-identity: "iOS Distribution"
+        code-signing-identity: "iOS Development"
         team-id: "4AVLVM82HR"
         certificate-password: ${{ secrets.CERTIFICATES_PASSWORD }}
         export-method: "app-store"
