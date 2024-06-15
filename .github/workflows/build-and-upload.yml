@@ -18,12 +18,19 @@ jobs:
         export-method: "app-store"
         configuration: "Release"
         scheme: "Diffusion"
+        output-path: "DiffusionML.ipa"
         update-targets: "Diffusion"
         build-sdk: "iphoneos"
         entitlements-file-path: "Diffusion/Diffusion.entitlements"
         export-options: "Support/ExportOptions.plist"
         increment-build-number: "true"
-        bundle-identifier: "com.carsonbdunlap.Diffusers"
+        bundle-identifier: "com.carsonbdunlap.DiffusionML"
         app-store-connect-api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
         app-store-connect-api-key-issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
         app-store-connect-api-key-base64: ${{ secrets.APPSTORE_PRIVATE_KEY }}
+    - uses: Apple-Actions/upload-testflight-build@master
+      with:
+        app-path: "DiffusionML.ipa"
+        issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+        api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
+        api-private-key: ${{ secrets.APPSTORE_PRIVATE_KEY }}
