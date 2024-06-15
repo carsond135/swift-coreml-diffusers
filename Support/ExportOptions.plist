@@ -6,12 +6,6 @@
 	<string>app-store</string>
 	<key>teamID</key>
 	<string>4AVLVM82HR</string>
-	<key>uploadBitcode</key>
-	<true/>
-	<key>compileBitcode</key>
-	<true/>
-	<key>uploadSymbols</key>
-	<true/>
 	<key>signingStyle</key>
 	<string>manual</string>
 	<key>signingCertificate</key>
