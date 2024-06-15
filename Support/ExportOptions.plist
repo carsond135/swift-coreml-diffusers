@@ -12,7 +12,7 @@
 	<string>iPhone Distribution: Carson Dunlap (4AVLVM82HR)</string>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.carsonbdunlap.Diffusers</key>
+		<key>com.carsonbdunlap.DiffusionML</key>
 		<string>DiffusionML</string>
 	</dict>
 </dict>
