@@ -15,7 +15,7 @@ jobs:
         code-signing-identity: "iPhone Distribution: Carson Dunlap (4AVLVM82HR)"
         team-id: "4AVLVM82HR"
         certificate-password: ${{ secrets.CERTIFICATES_PASSWORD }}
-        export-method: "ad-hoc"
+        export-method: "app-store"
         configuration: "Release"
         scheme: "Diffusion"
         update-targets: "Diffusion"
