@@ -15,4 +15,4 @@ MARKETING_VERSION = 1.1
 
 // Update if you fork this repo
 DEVELOPMENT_TEAM = 4AVLVM82HR
-PRODUCT_BUNDLE_IDENTIFIER = com.carsonbdunlap.Diffusers
+PRODUCT_BUNDLE_IDENTIFIER = com.carsonbdunlap.DiffusionML
