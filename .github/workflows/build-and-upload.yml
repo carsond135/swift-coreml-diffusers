@@ -12,15 +12,16 @@ jobs:
         project-path: "Diffusion.xcodeproj"
         p12-base64: ${{ secrets.CERTIFICATES_FILE_BASE64 }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
-        code-signing-identity: "iPhone Developer: Carson Dunlap (Q399RJNB2J)"
+        code-signing-identity: "iPhone Distribution: Carson Dunlap (4AVLVM82HR)"
         team-id: "4AVLVM82HR"
         certificate-password: ${{ secrets.CERTIFICATES_PASSWORD }}
-        export-method: "app-store"
+        export-method: "ad-hoc"
         configuration: "Release"
         scheme: "Diffusion"
         update-targets: "Diffusion"
         build-sdk: "iphoneos"
         entitlements-file-path: "Diffusion/Diffusion.entitlements"
+        export-options: "Support/ExportOptions.plist"
         increment-build-number: "true"
         bundle-identifier: "com.carsonbdunlap.Diffusers"
         app-store-connect-api-key-id: ${{ secrets.APPSTORE_KEY_ID }}
