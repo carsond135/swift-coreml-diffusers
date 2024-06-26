@@ -6,8 +6,12 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./.github/actions/ios-build-action
+    - name: "Checkout repository..."
+      uses: actions/checkout@v2
+    - name: "Patch Xcode 15.3"
+      uses: ./.github/actions/patch-package
+    - name: "Build app and upload..."
+      uses: ./.github/actions/ios-build-action
       with:
         project-path: "Diffusion.xcodeproj"
         p12-base64: ${{ secrets.CERTIFICATES_FILE_BASE64 }}
