@@ -965,7 +965,7 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		16AFDD4D2C1B7D4800536A62 /* XCRemoteSwiftPackageReference "ml-stable-diffusion" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/argmaxine/ml-stable-diffusion.git";
+			repositoryURL = "https://github.com/argmaxinc/ml-stable-diffusion.git";
 			requirement = {
 				branch = main;
 				kind = branch;
