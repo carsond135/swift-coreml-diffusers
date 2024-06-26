@@ -220,16 +220,16 @@ extension ModelInfo {
         supportsEncoder: false,
         quantized: false,
         isSD3: true
-    }
+    )
 
     static let sd3highres = ModelInfo(
         modelId: "argmaxinc/coreml-stable-diffusion-3-medium-1024-t5",
-        modelVersion: "SD3 medium (1024, TS, macOS)",
+        modelVersion: "SD3 medium (1024, T5, macOS)",
         supportsNeuralEngine: false, // TODO: support SD3 on ANE
         supportsEncoder: false,
         quantized: false,
         isSD3: true
-    }
+    )
 
     static let MODELS: [ModelInfo] = {
         if deviceSupportsQuantization {
